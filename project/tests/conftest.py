@@ -3,11 +3,11 @@ import os
 import pytest
 from starlette.testclient import TestClient
 
-from app import main
 from app.config import get_settings, Settings
 from app.main import create_application  # updated
 
 from tortoise.contrib.fastapi import register_tortoise
+
 
 def get_settings_override():
     return Settings(testing=1, database_url=os.environ.get("DATABASE_TEST_URL"))
